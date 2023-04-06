@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Page Title</title>
+		<!-- 2nd way of applying CSS is with <style> tag in .html file -->
+		<style>
+			/* Different selectors */
+			h1 {
+				background-color: blue;
+			}
+
+			/* Using id (name) as the UNIQUE selector, we use #id */
+			#second-title {
+				color: white;
+			}
+
+			#third-title {
+				color: yellow;
+			}
+
+			/* To select a "class", we use .class - class names does not need to be unique*/
+			.text-small {
+				font-size: small;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<!-- 1 way of applying CSS (in-line style using html's style attribute) -->
+			<h1 style="color: red" class="text-small">My First Title</h1>
+
+			<h1 id="second-title" class="text-small">My Second Title</h1>
+
+			<h1 id="third-title" class="text-small">My Third Title</h1>
+
+			<h2>My first h2</h2>
+		</main>
+	</body>
+</html>
