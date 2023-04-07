@@ -5,6 +5,14 @@
 		<!-- 2nd way of applying CSS is with <style> tag in .html file -->
 		<style>
 			/* Different selectors */
+			/* * {
+				color: aqua;
+			} */
+
+			body {
+				margin: 0;
+			}
+
 			h1 {
 				background-color: blue;
 			}
@@ -15,12 +23,87 @@
 			}
 
 			#third-title {
-				color: yellow;
+				color: green;
 			}
 
 			/* To select a "class", we use .class - class names does not need to be unique*/
 			.text-small {
 				font-size: small;
+			}
+
+			/* !important > in-line style attribute > id > class (last class in css file) */
+
+			#text-brown {
+				color: brown;
+			}
+
+			#text-blue {
+				color: blue;
+			}
+
+			.text-yellow {
+				color: yellow;
+			}
+
+			.text-aqua {
+				color: aqua;
+			}
+
+			/* all divs with class="body" */
+			div.body {
+				color: blue;
+			}
+
+			/* select multiple elements */
+			h3,
+			h4,
+			h5 {
+				color: blueviolet;
+			}
+
+			/* Select all descendents <a> tags that are inside of a <div> */
+			div a {
+				font-weight: bolder;
+			}
+
+			/* <a> tag has to be direct child of <div> */
+			div > a {
+				font-size: xx-large;
+			}
+
+			/* Select h3's that comes after a div - adjacent selector*/
+			div + h3 {
+				background-color: aquamarine;
+			}
+
+			.test-div {
+				background-color: blueviolet;
+				padding: 10px;
+				border: 3px solid black;
+				margin-bottom: 5px;
+			}
+
+			.test-span {
+				width: 300px;
+				display: inline-block;
+				background-color: brown;
+				padding: 10px;
+				border: 3px solid black;
+				margin-top: 5px;
+			}
+
+			.login-btn {
+				border: 0px;
+				background-color: purple;
+				color: white;
+				padding: 5px 10px;
+				margin-top: 5px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+
+			.login-btn:hover {
+				background-color: rgb(153, 125, 153);
 			}
 		</style>
 	</head>
@@ -28,15 +111,47 @@
 	<body>
 		<main>
 			<!-- 1 way of applying CSS (in-line style using html's style attribute) -->
-			<h1 style="color: red" class="text-small">My First Title</h1>
+			<h1 style="color: red">My First Title</h1>
 
 			<h1 id="second-title" class="text-small">My Second Title</h1>
 
 			<h1 id="third-title" class="text-small">My Third Title</h1>
 
-			<h2>My first h2</h2>
+			<!-- Order of classes written in-line does not matter!!! -->
+			<!-- The order of the class declared in the CSS file (or the <style> tag) matters, the last one gets applied!!! -->
+			<h2 style="color: red" id="text-brown" class="text-aqua text-yellow">My first h2</h2>
 
-			<h3>My first h3</h3>
+			<h3>H3 that comes after H2</h3>
+
+			<div class="title">
+				<p>Div 1</p>
+				<p>title</p>
+			</div>
+
+			<div class="body">
+				<p>Div 2</p>
+				<a>Visit My Webpage</a>
+			</div>
+
+			<div class="body">
+				<p>Div 3</p>
+				<p>
+					<a>Visit My Other Webpage</a>
+				</p>
+			</div>
+
+			<h3>H3 comes after a div</h3>
+
+			<h4>H4</h4>
+
+			<h5>H5</h5>
+
+			<!-- Box Model: All element are represented by this which includes: content, padding, border, margin (in this order) - we make adjustments to these to change their appearances and relations to each other -->
+			<div class="test-div">div</div>
+
+			<span class="test-span">span length</span>
+
+			<button class="login-btn">Login</button>
 		</main>
 	</body>
 </html>
