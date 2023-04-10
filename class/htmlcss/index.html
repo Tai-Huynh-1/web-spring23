@@ -17,6 +17,14 @@
 				background-color: blue;
 			}
 
+			a:visited {
+				color: blueviolet;
+			}
+
+			a:active {
+				color: blue;
+			}
+
 			/* Using id (name) as the UNIQUE selector, we use #id */
 			#second-title {
 				color: white;
@@ -103,7 +111,76 @@
 			}
 
 			.login-btn:hover {
-				background-color: rgb(153, 125, 153);
+				/* background-color: rgb(153, 125, 153); */
+				background-color: #997d99;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			/* n+3 is all child after 3 (including the 3rd child) */
+			/* ul > li:nth-child(n + 3) {
+				background-color: blue;
+				color: white;
+			}
+
+			ul > li:nth-child(6) {
+				background-color: white;
+				color: black;
+			} */
+
+			/* every 3rd multiple */
+			/* ul > li:nth-child(3n) {
+				background-color: blue;
+				color: white;
+			} */
+
+			ul > li:nth-child(even) {
+				background-color: blue;
+				color: white;
+			}
+
+			.container {
+				margin-left: 10px;
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				position: relative;
+			}
+
+			.child-box {
+				width: 100px;
+				height: 100px;
+				background-color: blueviolet;
+				border: 1px solid black;
+			}
+
+			/* Move relative to its original position - default is static */
+			.relative-box {
+				position: relative;
+				left: 100px;
+				top: 100px;
+			}
+
+			/* Fixed, but positioned relative to the viewport at all times */
+			.fixed-box {
+				position: fixed;
+				bottom: 0px;
+				right: 0px;
+			}
+
+			.absolute-box {
+				position: absolute;
+				top: 0px;
+			}
+
+			.header {
+				position: sticky;
+				top: 0px;
+				width: 100%;
+				height: 40px;
+				background-color: aqua;
 			}
 		</style>
 	</head>
@@ -112,6 +189,8 @@
 		<main>
 			<!-- 1 way of applying CSS (in-line style using html's style attribute) -->
 			<h1 style="color: red">My First Title</h1>
+
+			<div class="header">Sticky Header</div>
 
 			<h1 id="second-title" class="text-small">My Second Title</h1>
 
@@ -136,7 +215,8 @@
 			<div class="body">
 				<p>Div 3</p>
 				<p>
-					<a>Visit My Other Webpage</a>
+					<a href="https://google.com" target="_blank">Visit Google</a>
+					<a href="https://amazon.com" target="_blank">Amazon</a>
 				</p>
 			</div>
 
@@ -152,6 +232,25 @@
 			<span class="test-span">span length</span>
 
 			<button class="login-btn">Login</button>
+
+			<!-- N-th child pseudo-class -->
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+				<li>Item 5</li>
+				<li>Item 6</li>
+			</ul>
+
+			<!-- CSS Positioning -->
+			<!-- There are 5 CSS Positions: static (default), relative, fixed, sticky, absolute -->
+			<div class="container">
+				<div class="child-box relative-box">Relative Box</div>
+				<div class="child-box">Static Box</div>
+				<div class="child-box absolute-box">Absolute</div>
+				<div class="child-box fixed-box">Fixed Box - Relative to Viewport at all times</div>
+			</div>
 		</main>
 	</body>
 </html>
