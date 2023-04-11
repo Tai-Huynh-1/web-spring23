@@ -182,6 +182,34 @@
 				height: 40px;
 				background-color: aqua;
 			}
+
+			.relative-position {
+				position: relative;
+				margin-left: 10px;
+				margin-top: 10px;
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+			}
+
+			.box-absolute {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+
+			.box-fixed {
+				position: sticky;
+				bottom: 30px;
+			}
+
+			.parent {
+				margin-left: 10px;
+				margin-top: 10px;
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+			}
 		</style>
 	</head>
 
@@ -249,7 +277,68 @@
 				<div class="child-box relative-box">Relative Box</div>
 				<div class="child-box">Static Box</div>
 				<div class="child-box absolute-box">Absolute</div>
-				<div class="child-box fixed-box">Fixed Box - Relative to Viewport at all times</div>
+				<!-- <div class="child-box fixed-box">Fixed Box - Relative to Viewport at all times</div> -->
+			</div>
+
+			<div class="relative-position">
+				<div class="child-box">Static</div>
+				<div class="child-box box-absolute">Box Absolute</div>
+				<div class="child-box box-fixed">Sticky 2</div>
+				<div class="child-box">Static</div>
+			</div>
+
+			<!-- Flexbox: built-in responsiveness -->
+			<div style="display: flex; align-items: end; justify-content: end; border: 1px solid black; margin-top: 10px; margin-left: 10px; height: 150px">
+				<div class="child-box" style="display: flex">
+					<div style="width: 33px; height: 33px; border: 1px solid black">S</div>
+					<div style="width: 33px; height: 33px; border: 1px solid black">S</div>
+					<div style="width: 33px; height: 33px; border: 1px solid black; margin-right: 5px">S</div>
+				</div>
+				<div class="child-box">2</div>
+				<div class="child-box" style="margin-right: 30px">3</div>
+				<!-- <div class="child-box">4</div>
+				<div class="child-box">5</div>
+				<div class="child-box">6</div> -->
+			</div>
+
+			<div style="display: flex; flex-direction: column; justify-content: end; border: 1px solid black; margin-top: 10px; margin-left: 10px; height: 150px">
+				<!-- <div class="child-box">1</div>
+				<div class="child-box">2</div>
+				<div class="child-box" style="">3</div> -->
+				<div style="background-color: red">3</div>
+				<div style="background-color: red">4</div>
+				<div style="background-color: red">5</div>
+			</div>
+
+			<div style="width: 400px; height: 470px; background-color: white; border: 1px solid black; margin-top: 10px; margin-left: 10px; display: flex">
+				<!-- Left -->
+				<div style="width: 240px; background-color: rgb(157, 172, 235)">
+					<!-- Top Orange Rectangle -->
+					<div>
+						<div></div>
+						<div></div>
+					</div>
+
+					<!-- Square -->
+					<div></div>
+
+					<!-- Green Rectangle -->
+					<div>
+						<div></div>
+						<div></div>
+					</div>
+
+					<!-- Bottom Orange Rectangle -->
+					<div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+
+				<!-- Right -->
+				<div style="width: 160px">
+					<div style="height: 325px; background-color: bisque"></div>
+				</div>
 			</div>
 		</main>
 	</body>
