@@ -1,0 +1,252 @@
+/* Different selectors */
+/* * {
+				color: aqua;
+			} */
+
+body {
+	margin: 0;
+}
+
+h1 {
+	background-color: blue;
+}
+
+a:visited {
+	color: blueviolet;
+}
+
+a:active {
+	color: blue;
+}
+
+/* Using id (name) as the UNIQUE selector, we use #id */
+#second-title {
+	color: white;
+}
+
+#third-title {
+	color: green;
+}
+
+/* To select a "class", we use .class - class names does not need to be unique*/
+.text-small {
+	font-size: small;
+}
+
+/* !important > in-line style attribute > id > class (last class in css file) */
+
+#text-brown {
+	color: brown;
+}
+
+#text-blue {
+	color: blue;
+}
+
+.text-yellow {
+	color: yellow;
+}
+
+.text-aqua {
+	color: aqua;
+}
+
+/* all divs with class="body" */
+div.body {
+	color: blue;
+}
+
+/* select multiple elements */
+h3,
+h4,
+h5 {
+	color: blueviolet;
+}
+
+/* Select all descendents <a> tags that are inside of a <div> */
+div a {
+	font-weight: bolder;
+}
+
+/* <a> tag has to be direct child of <div> */
+div > a {
+	font-size: xx-large;
+}
+
+/* Select h3's that comes after a div - adjacent selector*/
+div + h3 {
+	background-color: aquamarine;
+}
+
+.test-div {
+	background-color: blueviolet;
+	padding: 10px;
+	border: 3px solid black;
+	margin-bottom: 5px;
+}
+
+.test-span {
+	width: 300px;
+	display: inline-block;
+	background-color: brown;
+	padding: 10px;
+	border: 3px solid black;
+	margin-top: 5px;
+}
+
+.login-btn {
+	border: 0px;
+	background-color: purple;
+	color: white;
+	padding: 5px 10px;
+	margin-top: 5px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.login-btn:hover {
+	/* background-color: rgb(153, 125, 153); */
+	background-color: #997d99;
+}
+
+ul {
+	list-style: none;
+}
+
+/* n+3 is all child after 3 (including the 3rd child) */
+/* ul > li:nth-child(n + 3) {
+				background-color: blue;
+				color: white;
+			}
+
+			ul > li:nth-child(6) {
+				background-color: white;
+				color: black;
+			} */
+
+/* every 3rd multiple */
+/* ul > li:nth-child(3n) {
+				background-color: blue;
+				color: white;
+			} */
+
+ul > li:nth-child(even) {
+	background-color: blue;
+	color: white;
+}
+
+.container {
+	margin-left: 10px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	position: relative;
+}
+
+.child-box {
+	width: 100px;
+	height: 100px;
+	background-color: blueviolet;
+	border: 1px solid black;
+}
+
+/* Move relative to its original position - default is static */
+.relative-box {
+	position: relative;
+	left: 100px;
+	top: 100px;
+}
+
+/* Fixed, but positioned relative to the viewport at all times */
+.fixed-box {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+.absolute-box {
+	position: absolute;
+	top: 0px;
+}
+
+.header {
+	position: sticky;
+	top: 0px;
+	width: 100%;
+	height: 40px;
+	background-color: aqua;
+}
+
+.relative-position {
+	position: relative;
+	margin-left: 10px;
+	margin-top: 10px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+.box-absolute {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.box-fixed {
+	position: sticky;
+	bottom: 30px;
+}
+
+.parent {
+	margin-left: 10px;
+	margin-top: 10px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+/* Media Queries for applying different properties depending on screen size */
+/* min-width means at least 500px or greater */
+/* This is the "mobile-first" approach to design and development */
+/* @media only screen and (min-width: 500px) {
+				body {
+					background-color: rebeccapurple;
+					color: white;
+				}
+
+				h1 {
+					background-color: white;
+				}
+			}
+
+			@media only screen and (min-width: 700px) {
+				body {
+					background-color: green;
+				}
+			} */
+
+/* max-width means when screen is 500px or less */
+/* This is the desktop-first approach */
+@media only screen and (max-width: 500px) {
+	body {
+		background-color: rebeccapurple;
+		color: white;
+	}
+
+	h1 {
+		background-color: white;
+	}
+}
+
+.transition-div {
+	background-color: aquamarine;
+	width: 100px;
+	height: 100px;
+	transition: width 6s, height 6s, transform 6s;
+}
+
+.transition-div:hover {
+	width: 300px;
+	height: 300px;
+	transform: rotate(45deg);
+}

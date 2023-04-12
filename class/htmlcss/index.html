@@ -3,214 +3,9 @@
 	<head>
 		<title>My Page Title</title>
 		<!-- 2nd way of applying CSS is with <style> tag in .html file -->
-		<style>
-			/* Different selectors */
-			/* * {
-				color: aqua;
-			} */
 
-			body {
-				margin: 0;
-			}
-
-			h1 {
-				background-color: blue;
-			}
-
-			a:visited {
-				color: blueviolet;
-			}
-
-			a:active {
-				color: blue;
-			}
-
-			/* Using id (name) as the UNIQUE selector, we use #id */
-			#second-title {
-				color: white;
-			}
-
-			#third-title {
-				color: green;
-			}
-
-			/* To select a "class", we use .class - class names does not need to be unique*/
-			.text-small {
-				font-size: small;
-			}
-
-			/* !important > in-line style attribute > id > class (last class in css file) */
-
-			#text-brown {
-				color: brown;
-			}
-
-			#text-blue {
-				color: blue;
-			}
-
-			.text-yellow {
-				color: yellow;
-			}
-
-			.text-aqua {
-				color: aqua;
-			}
-
-			/* all divs with class="body" */
-			div.body {
-				color: blue;
-			}
-
-			/* select multiple elements */
-			h3,
-			h4,
-			h5 {
-				color: blueviolet;
-			}
-
-			/* Select all descendents <a> tags that are inside of a <div> */
-			div a {
-				font-weight: bolder;
-			}
-
-			/* <a> tag has to be direct child of <div> */
-			div > a {
-				font-size: xx-large;
-			}
-
-			/* Select h3's that comes after a div - adjacent selector*/
-			div + h3 {
-				background-color: aquamarine;
-			}
-
-			.test-div {
-				background-color: blueviolet;
-				padding: 10px;
-				border: 3px solid black;
-				margin-bottom: 5px;
-			}
-
-			.test-span {
-				width: 300px;
-				display: inline-block;
-				background-color: brown;
-				padding: 10px;
-				border: 3px solid black;
-				margin-top: 5px;
-			}
-
-			.login-btn {
-				border: 0px;
-				background-color: purple;
-				color: white;
-				padding: 5px 10px;
-				margin-top: 5px;
-				cursor: pointer;
-				border-radius: 5px;
-			}
-
-			.login-btn:hover {
-				/* background-color: rgb(153, 125, 153); */
-				background-color: #997d99;
-			}
-
-			ul {
-				list-style: none;
-			}
-
-			/* n+3 is all child after 3 (including the 3rd child) */
-			/* ul > li:nth-child(n + 3) {
-				background-color: blue;
-				color: white;
-			}
-
-			ul > li:nth-child(6) {
-				background-color: white;
-				color: black;
-			} */
-
-			/* every 3rd multiple */
-			/* ul > li:nth-child(3n) {
-				background-color: blue;
-				color: white;
-			} */
-
-			ul > li:nth-child(even) {
-				background-color: blue;
-				color: white;
-			}
-
-			.container {
-				margin-left: 10px;
-				width: 300px;
-				height: 300px;
-				border: 1px solid black;
-				position: relative;
-			}
-
-			.child-box {
-				width: 100px;
-				height: 100px;
-				background-color: blueviolet;
-				border: 1px solid black;
-			}
-
-			/* Move relative to its original position - default is static */
-			.relative-box {
-				position: relative;
-				left: 100px;
-				top: 100px;
-			}
-
-			/* Fixed, but positioned relative to the viewport at all times */
-			.fixed-box {
-				position: fixed;
-				bottom: 0px;
-				right: 0px;
-			}
-
-			.absolute-box {
-				position: absolute;
-				top: 0px;
-			}
-
-			.header {
-				position: sticky;
-				top: 0px;
-				width: 100%;
-				height: 40px;
-				background-color: aqua;
-			}
-
-			.relative-position {
-				position: relative;
-				margin-left: 10px;
-				margin-top: 10px;
-				width: 300px;
-				height: 300px;
-				border: 1px solid black;
-			}
-
-			.box-absolute {
-				position: absolute;
-				top: 10px;
-				right: 10px;
-			}
-
-			.box-fixed {
-				position: sticky;
-				bottom: 30px;
-			}
-
-			.parent {
-				margin-left: 10px;
-				margin-top: 10px;
-				width: 300px;
-				height: 300px;
-				border: 1px solid black;
-			}
-		</style>
+		<!-- 3rd way of applying CSS is with <link> tag & separate CSS file -->
+		<link rel="stylesheet" href="index.css" type="text/css" />
 	</head>
 
 	<body>
@@ -314,24 +109,24 @@
 				<!-- Left -->
 				<div style="width: 240px; background-color: rgb(157, 172, 235)">
 					<!-- Top Orange Rectangle -->
-					<div>
-						<div></div>
-						<div></div>
+					<div style="width: 200px; height: 50px; background-color: aliceblue; margin-left: 40px; display: flex">
+						<div style="background-color: orange; width: 30px; height: 100%"></div>
+						<div style="background-color: orangered; width: 100%; height: 100%"></div>
 					</div>
 
 					<!-- Square -->
-					<div></div>
+					<div style="background-color: gainsboro; width: 160px; height: 160px; margin-top: 60px; margin-left: 80px"></div>
 
 					<!-- Green Rectangle -->
-					<div>
-						<div></div>
-						<div></div>
+					<div style="width: 200px; height: 50px; background-color: aliceblue; margin-left: 40px; margin-top: 30px; display: flex">
+						<div style="background-color: greenyellow; width: 20px; height: 100%"></div>
+						<div style="background-color: green; width: 100%; height: 100%"></div>
 					</div>
 
 					<!-- Bottom Orange Rectangle -->
-					<div>
-						<div></div>
-						<div></div>
+					<div style="width: 200px; height: 50px; background-color: aliceblue; margin-left: 40px; margin-top: 30px; display: flex">
+						<div style="background-color: orange; width: 30px; height: 100%"></div>
+						<div style="background-color: orangered; width: 100%; height: 100%"></div>
 					</div>
 				</div>
 
@@ -340,6 +135,9 @@
 					<div style="height: 325px; background-color: bisque"></div>
 				</div>
 			</div>
+
+			<!-- Basic animation: transition -->
+			<div class="transition-div"></div>
 		</main>
 	</body>
 </html>
