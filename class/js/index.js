@@ -7,7 +7,88 @@ var active = true; // boolean (true or false)
 
 var membership1 = undefined; // undefined (a variable has be created in memory, but has not been assigned a value)
 var membership2; // undefined
+let membership3;
 
 var date_created = null; // null (null is a proper value, the variable has been assigned a value of null) (empty placeholder, lack of value, empty value)
 
-console.log("date_created", date_created);
+// console.log("membership1", membership1);
+// console.log("membership2", membership2);
+// console.log("membership3", membership3);
+// console.log("date_created", date_created);
+
+// console.log("age", typeof age); // "number"
+
+// 'var' and 'let' can be reassigned, 'const' cannot
+let myAge = 10;
+myAge = 20;
+
+const yourAge = 15;
+// yourAge = 20; CONST CANNOT BE REASSIGNED
+
+// 'var' can be delared more than once on the same scope (level of visible)
+var membership1 = true;
+// let myAge = true;
+
+// 'var' gets hoisted!
+
+// normal examples, declare a variable then use it
+// var nameA;
+// console.log("nameA", nameA);
+// nameA = "Dave";
+// console.log("nameA", nameA);
+
+// let nameB;
+// console.log("nameB", nameB);
+// nameB = "Dave";
+// console.log("nameB", nameB);
+
+// use a variable before declaration (Unusual case)
+// HOISTING: makes it seem like our variable (var) is brought to the top of the code & executed first
+// BUT it does not have a value assigned to it, therefore JS assigns 'undefined'
+
+console.log("calling nameA before declare", nameA); // => we get undefined, because var is hoisted
+var nameA; // declare
+console.log("nameA after declare, but no assignment", nameA); // undefined
+nameA = "Dave"; // assignment
+console.log("nameA after assignment", nameA); // Dave
+
+// console.log("calling nameA before declare", nameA); // => ReferenceError: Cannot access 'nameA' before initialization
+// let nameA; // declare
+// console.log("nameA after declare, but no assignment", nameA); // undefined
+// nameA = "Dave"; // assignment
+// console.log("nameA after assignment", nameA); // Dave
+
+// console.log(email);
+// const email = "abc@gmail.com";
+
+// JS goes through 2 phases when running code: memory allocation & execution
+
+// functions declared using 'function' keyword also get hoisted - functions work normally
+
+// functions declared with 'function' keyword
+// console.log("using multiply function, before declaring it", multiply(5, 4)); // using multiply function, before declaring it
+function multiply(a, b) {
+	return a * b;
+}
+
+// anonymous functions
+// console.log("using subtract function, before declaring it", substract(15, 10));
+// ReferenceError: Cannot access 'substract' before initialization
+let substract = function (a, b) {
+	return a - b;
+};
+
+// arrow functions
+// console.log("using divide function, before declaring it", divide(15, 5));
+// ReferenceError: Cannot access 'divide' before initialization
+const divide = (a, b) => {
+	return a / b;
+};
+
+// functions with 'var'
+console.log("using add function, before declaring it", add(15, 5)); // TypeError: add is not a function
+var add = function (a, b) {
+	return a + b;
+};
+
+// FIND OUT WHAT IS THE VALUE OF "add" on line 89. Tell me why we are getting this error: TypeError: add is not a function
