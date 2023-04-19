@@ -66,7 +66,7 @@ console.log("nameA after assignment", nameA); // Dave
 // functions declared using 'function' keyword also get hoisted - functions work normally
 
 // functions declared with 'function' keyword
-// console.log("using multiply function, before declaring it", multiply(5, 4)); // using multiply function, before declaring it
+console.log("using multiply function, before declaring it", multiply(5, 4)); // using multiply function, before declaring it
 function multiply(a, b) {
 	return a * b;
 }
@@ -86,9 +86,24 @@ const divide = (a, b) => {
 };
 
 // functions with 'var'
-console.log("using add function, before declaring it", add(15, 5)); // TypeError: add is not a function
+var add; // undefined
+// console.log("using add function, before declaring it", add(15, 5)); // TypeError: add is not a function
+// undefined(15, 5) - basically what I'm doing on line 90, that's why it throws an error
 var add = function (a, b) {
 	return a + b;
 };
 
 // FIND OUT WHAT IS THE VALUE OF "add" on line 89. Tell me why we are getting this error: TypeError: add is not a function
+// undefined
+
+// difference between 'var' & 'let'
+// 1. hoisting is performed on "var", but not on "let"
+// console.log("hisName", hisName); // undefined
+var hisName = "Tai";
+
+// console.log("hisAge", hisAge); // TypeError, ReferenceError
+let hisAge = 15;
+
+// 2. 'var' can be re-declared in the same scope, not 'let' or 'const'
+// var hisName = "Dave" // this is okay
+// let hisAge = 20 // compile error
