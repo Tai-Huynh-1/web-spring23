@@ -45,3 +45,18 @@ arrD[1] = 777; // arrB[1] = 777
 console.log(arrB); // [5, 777] 'aaa000', [5, 777] 'aaa000', [5, 777] 'aaa000'
 console.log(arrD); // [5, 777] 'aaa000', [5, 777] 'aaa000', [5, 777] 'aaa000'
 console.log(arrB === arrD); // 'aaa000' === 'aaa000' => true , true , true
+
+// review
+// hoisting
+// someFunction()
+// var someFunction = function () {}
+
+// copy by value? compare by value?
+let a = 100;
+let b = a;
+console.log(a === b); // true
+
+// copy by reference and compare by reference?
+let arrX = [];
+let arrZ = arrX;
+console.log(arrX === arrZ); // true
