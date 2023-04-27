@@ -46,16 +46,30 @@ function printMyAge() {
 // if-else, while, for loops => block scope
 
 function blockFunc(boolean) {
-	let answer;
+	let answer = 0;
 
 	if (boolean) {
 		answer = 1;
-		console.log("true");
+		console.log(answer);
 	} else {
-		answer = 0;
-		console.log("false");
+		let answer = 2;
+		answer = 1;
+		console.log(answer); //
 	}
+
 	return answer;
 }
 
-console.log(blockFunc(false));
+console.log(blockFunc(false)); //
+
+// == vs ===
+// console.log(10 === "10"); // false, false => false (type not same)
+// console.log("ten" === "10"); // false, false => false (scalar value is not same)
+// console.log("ten" === "nine"); // false, false => false (scalar value is not same)
+// console.log("ten" === "010"); // false , true => false (scalar value is not same)
+// console.log(10 === 010); // false
+
+// console.log(10 == "10"); // false, false => true (if type is diff, type coercion then compare scalar value)
+// console.log(10 == "ten"); // false, false => false
+// console.log("ten" == "10"); // false, false => false (scalar value is not same)
+// console.log("ten" == "010"); // false, true => false (scalar value is not same)
