@@ -95,7 +95,7 @@ function blockFunc(boolean) {
 // console.log("ten" == "010"); // false, true => false (scalar value is not same)
 
 // Given an array of numbers, [56, 84, 56, 800, 47, 6, 1, 0, 555, 647], write a function that returns the largest value from the input array.
-const input = [56, 84, 56, 800, 47, 6, 1, 0, 555, 647];
+const input = [56, 84, 56, 800, 47, 6, 1, 0, 555, 647, 5, 67, 875, 6, 444, 562];
 function findLargestNumber(array) {
 	let largest = array[0];
 	// let i = 1; // index iterator
@@ -137,12 +137,66 @@ function findLargestNumberUsingForEach(array) {
 
 // console.log(findLargestNumberUsingForEach(input));
 
-function customForEach(cb, array) {
-	for (let i = 0; i < array.length; i++) {
-		cb();
-	}
-}
+// function customForEach(callback, array) {
+// 	for (let i = 0; i < array.length; i++) {
+// 		const currentElement = array[i];
+// 		callback(currentElement);
+// 	}
+// }
+
+// customForEach(function (element) {
+// 	console.log("logging each element", element);
+// }, input);
 
 // demonstrate iterating through every item vs end early with for loop vs forEach
 
-//
+// ending a loop early
+
+// forEach loop cannot return early, since return keyword is inside of the callback function, the callback gets returned early
+function findNumberForEach(array, target) {
+	array.forEach(function (element) {
+		console.log("inside of loop", element);
+		if (element === target) {
+			console.log("inside of IF statement", element);
+			return true;
+		}
+	});
+
+	return false;
+}
+
+// for loops can be ended early (return early with proper value)
+function findNumberForLoop(array, target) {
+	for (let index = 0; index < array.length; index++) {
+		const element = array[index];
+		console.log("inside of loop", element);
+		if (element === target) {
+			console.log("inside of IF statement", element);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+// console.log(findNumberForLoop(input, 800));
+
+// Array.map
+
+// Write a function that takes in an array of numbers and use the forEach() or map() to multiply every number by 100. The function should return a new array with the result. The original array should not be mutated.
+
+function multiplyBy100(array) {
+	// using arrow function for callback
+	const newArray = array.map((element) => {
+		// .map's callback function needs to return a new value on each iteration to be inserted into the newArray
+		// .map, length of original array is preserved into the new array that gets returned
+		return element * 100;
+	});
+
+	// return input array from function scope
+	return newArray;
+}
+
+console.log("original input", input);
+console.log(multiplyBy100(input));
+console.log("after multiplyBy100", input);
