@@ -197,6 +197,37 @@ function multiplyBy100(array) {
 	return newArray;
 }
 
-console.log("original input", input);
-console.log(multiplyBy100(input));
-console.log("after multiplyBy100", input);
+// console.log("original input", input);
+// console.log(multiplyBy100(input));
+// console.log("after multiplyBy100", input);
+
+//Create a function called “cloneArray” that will take any array and return a copy of the array.
+
+const arr1 = [1, 4, 7, 3, 9];
+const arr2 = [9, 8, 7, 5];
+
+// Array.reduce
+
+function sumAll(array) {
+	let sum = 0;
+
+	array.forEach(function (element) {
+		sum = sum + element;
+	});
+
+	return sum;
+}
+
+// console.log(sumAll(arr1));
+// console.log(sumAll(arr2));
+
+function sumReduce(array) {
+	const sum = array.reduce(function (summation, element) {
+		return summation + element;
+	}, 0);
+
+	return sum;
+}
+
+console.log(sumReduce(arr1));
+console.log(sumReduce(arr2));
