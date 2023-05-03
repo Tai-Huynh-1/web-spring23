@@ -229,5 +229,72 @@ function sumReduce(array) {
 	return sum;
 }
 
-console.log(sumReduce(arr1));
-console.log(sumReduce(arr2));
+// console.log(sumReduce(arr1));
+// console.log(sumReduce(arr2));
+
+let fruit = "apple";
+
+function checkPrice(fruit) {
+	if (typeof fruit === "string") console.log("10.00");
+	else if (fruit === "apple") console.log("5.00");
+	else if (fruit === "grape") console.log("8.00");
+	else console.log("1.00");
+}
+
+function checkPriceV2(fruit) {
+	if (fruit === "apple") console.log("5.00");
+	else console.log("1.00");
+	console.log("99.00");
+}
+
+function checkPriceV3(fruit) {
+	if (typeof fruit === "string") console.log("10.00");
+	if (fruit === "apple") console.log("5.00");
+	else if (typeof fruit === "string") console.log("10.00");
+	else console.log("1.00");
+}
+
+// checkPrice(fruit); // 10
+// console.log("===");
+// checkPriceV2(fruit); // 5, 99
+// console.log("===");
+// checkPriceV3(fruit); // 10, 5
+fruit = "grape";
+function checkPriceSwitch(fruit) {
+	switch (fruit) {
+		case "apple":
+			console.log("5.00");
+			break;
+		case "grape":
+			console.log("8.00");
+			break;
+		default:
+			console.log("No match");
+	}
+
+	console.log("=== function ending ===");
+}
+
+// checkPriceSwitch(fruit);
+
+// looping over object keys
+// function logKeys(objectParameter) {
+// 	for (const key in objectParameter) {
+// 		const value = objectParameter[key];
+// 		console.log(`${key}: ${value}`);
+// 	}
+// }
+// logKeys({ name: "Jack", email: "j@gmail.com", age: 55 });
+
+function doubleLoop(array1, array2) {
+	for (let i = 0; i < array1.length; i++) {
+		// i=0 => j=0,1,2... || i=1 => j=0,1,2...
+		for (let j = 0; j < array2.length; j++) {
+			const element1 = array1[i];
+			const element2 = array2[j];
+			console.log(`${element1} - ${element2}`);
+		}
+	}
+}
+
+doubleLoop(arr1, arr2);
