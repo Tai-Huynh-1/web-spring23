@@ -50,3 +50,20 @@ const number = 1000;
 arrG.push(number); // [1000]
 console.log(arrG);
 arrG = "string"; // reassignments are not allowed with "const"
+
+// arrow functions
+
+arrG.forEach((element, index, originalArray) => {
+	// visit / iterate through each element of an array once
+});
+
+const newArray = arrG.map((element, index, originalArray) => {
+	// visit / iterate through each element of an array once
+	// your callback function must return a value on each iteration
+	// .map also returns a new array with those returned values
+});
+
+const finalAccumulatedValue = arrG.reduce((accum, curr) => {
+	// visit / iterate through each element of an array once
+	// on each iteration, your callback function must return the new accumulated value
+}, 0);

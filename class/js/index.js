@@ -107,3 +107,68 @@ let hisAge = 15;
 // 2. 'var' can be re-declared in the same scope, not 'let' or 'const'
 // var hisName = "Dave" // this is okay
 // let hisAge = 20 // compile error
+
+// arrow function vs normal function
+// normal function declaration
+function myFunc(firstParam) {}
+myFunc(); // invoking the function
+
+// anonymous function (you still have to store it into a variable to refer to it)
+const myFunc2 = function (firstParam) {};
+myFunc2(); // invoking the function
+
+// arrow function - more concised (shorter to write) and it has an implied "return" when there is no function body {}
+// with one parameter
+const myArrowFunc = (firstParam) => {};
+myArrowFunc(); // invoking the function
+
+// with 2+ parameter, you need parenthesis
+const myArrowFunc2 = (firstParam, secondParam, thirdParam) => {};
+myArrowFunc2();
+
+// using arrow functions
+const myArr = [1, 2, 3, 4];
+myArr.map(function (element) {
+	return element * 10;
+});
+
+// (element) => element * 10 (implied return when function body is not present)
+const mapWithArrow = myArr.map((element) => element * 10);
+console.log("mapWithArrow", mapWithArrow);
+
+// ternary operator
+function checkSeniority(age) {
+	// ternary operator has to "return" a value implicitly (return keyword is not needed)
+	return age >= 65 ? "elder" : age >= 18 ? "adult" : "minor";
+
+	// if (age >= 65) {
+	// 	return "elder";
+	// } else if (age >= 18) {
+	// 	return "adult";
+	// } else {
+	// 	return "minor";
+	// }
+}
+
+console.log(checkSeniority(26));
+
+// recursions vs. iterations
+// fib seq: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55...
+// F(n) = F(n-1) + F(n-2)
+// F(0) = 0; F(1) = 1
+// n = 2; F(2) = F(2-1) + F(2-2) => F(1) + F(0) => 0 + 1 => 1
+// n = 3; F(3) = F(3-1) + F(3-2) => F(2) + F(1) => 1 + 1 => 2
+function generateFib(n) {
+	// iterative
+	const fibNumbers = [0, 1];
+	for (let i = 2; i <= n; i++) {
+		fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2]; // => fibNumbers[1] + fibNumbers[0] => 1 + 0
+	}
+	return fibNumbers;
+}
+
+console.log(generateFib(10));
+
+// closures
+
+// IIFE
