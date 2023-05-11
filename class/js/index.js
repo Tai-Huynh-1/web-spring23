@@ -159,16 +159,73 @@ console.log(checkSeniority(26));
 // n = 2; F(2) = F(2-1) + F(2-2) => F(1) + F(0) => 0 + 1 => 1
 // n = 3; F(3) = F(3-1) + F(3-2) => F(2) + F(1) => 1 + 1 => 2
 function generateFib(n) {
+	// O(n) time, O(n) space
 	// iterative
 	const fibNumbers = [0, 1];
 	for (let i = 2; i <= n; i++) {
 		fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2]; // => fibNumbers[1] + fibNumbers[0] => 1 + 0
 	}
-	return fibNumbers;
+	return fibNumbers[n];
+}
+// console.log(generateFib(10));
+
+function generateFibRecursive(n) {
+	// O(2^n) time, O(n) stack memory space
+	// defining the exit condition
+	if (n === 0) return 0;
+	if (n === 1) return 1;
+	return generateFibRecursive(n - 1) + generateFibRecursive(n - 2);
+}
+// console.log(generateFibRecursive(5));
+
+// closures: is formed when a function is created, always giving that function access to all variables available to it in its lexical scope at the time the function was created
+function addA(a) {
+	return (b) => {
+		return a + b;
+	};
 }
 
-console.log(generateFib(10));
+const innerFuncA = addA(5); // what type is 'result' : function
+const sum = innerFuncA(6);
+console.log(sum); // 11
 
-// closures
+const innerFuncB = addA(10);
+const sum2 = innerFuncB(12);
+console.log(sum2); // 22
+
+function normalAdd(a) {
+	console.log(a);
+	return;
+}
+
+// closure example 2: private variable
+function getCounter() {
+	let counter = 0; // private variable
+	return () => {
+		counter = counter + 1;
+		return counter;
+	};
+}
+
+const incrementCounter1 = getCounter();
+const c1 = incrementCounter1(); // what is the value of c1?
+console.log("c1", c1); // 1
+
+const incrementCounter2 = getCounter();
+const c2 = incrementCounter2();
+console.log("c2", c2); // 1
+const c3 = incrementCounter2();
+console.log("c3", c3); // 2
+const c4 = incrementCounter2();
+console.log("c4", c4); // 3
+console.log("c1", c1); // 1
+
+// const resultNormalAdd = normalAdd(50);
+
+// closure with arrow functions in short
+
+// higher-order functions
+
+// pure functions
 
 // IIFE
