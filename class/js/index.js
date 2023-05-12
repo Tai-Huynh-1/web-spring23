@@ -223,9 +223,45 @@ console.log("c1", c1); // 1
 // const resultNormalAdd = normalAdd(50);
 
 // closure with arrow functions in short
+const addB = (a) => (b) => a + b;
 
-// higher-order functions
+// higher-order functions: a function that takes in another function as a parameter and/or returns a function
+const z = [];
+z.map(() => {}); // .map is an HOF
+// addB is also a HOF
 
-// pure functions
+// pure functions: are functions where the output is solely dependent on the input given to it. Given a particular input, the function will always generate the same output - function also should not have any side effects (mutating its input is considered a side effect)
+// function addItemsToArray(item) {
+// 	x.push(item);
+// }
 
-// IIFE
+// addItemsToArray(100);
+// console.log(x);
+// addItemsToArray(100);
+// console.log(x);
+
+// function addToArray(item) {
+// 	const x = [];
+// 	return x.push(item);
+// }
+const x = [1, 2];
+
+// functions in JS are passed by reference for objects and passed by value for primitives
+function impureFunction(array, item) {
+	array.push(item);
+	return array;
+}
+
+function pureFunction(array, item) {
+	return [...array, item];
+}
+
+const array = pureFunction(x, 999);
+console.log("array", array); // [999]
+console.log("x", x); // [999]
+console.log(x === array); // true
+
+// IIFE: Immediately-invoked function expression (need parenthesis around the function def, and function does not need a name, bcuz it gets called right away)
+(function (a, b) {
+	console.log(a + b);
+})(5, 10);
